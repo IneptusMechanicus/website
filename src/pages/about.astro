@@ -1,3 +1,19 @@
+---
+import "../css/style.css"
+const pageTitle = "About Me";
+
+const identity = {
+	firstName: "Sarah",
+	country: "Canada",
+	occupation: "Technical Writer",
+	hobbies: ["photography", "birdwatching", "baseball"],
+};
+
+const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
+---
+<head>
+	<title>{pageTitle}</title>
+</head>
 <body>
 	<a href="/">Home</a>
 	<a href="/about/">About</a>
@@ -5,4 +21,13 @@
 
 	<h2>About</h2>
 	<p>This is an about page</p>
+	<ul>
+		<li>{identity.firstName}</li>
+		<li>{identity.country}</li>
+		<li>Skills:
+			<ul>{skills.map((item) => <li>{item}</li>)}</ul>
+		</li>
+		
+	</ul>
+
 </body>
